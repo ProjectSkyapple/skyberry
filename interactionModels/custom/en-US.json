@@ -1,0 +1,139 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "earth orange demo",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "CaptureInterestIntent",
+          "slots": [
+            {
+              "name": "interest",
+              "type": "INTEREST"
+            }
+          ],
+          "samples": [
+            "im interested in {interest}",
+            "no preference",
+            "{interest} please",
+            "in {interest}",
+            "{interest}"
+          ]
+        },
+        {
+          "name": "AMAZON.YesIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NoIntent",
+          "samples": []
+        },
+        {
+          "name": "CallToDoListIntent",
+          "slots": [],
+          "samples": [
+            "remind me what\u0027s on my to do list",
+            "to do",
+            "to do list",
+            "what\u0027s on my to do list"
+          ]
+        },
+        {
+          "name": "InitialRemoveToDoIntent",
+          "slots": [],
+          "samples": [
+            "remove",
+            "remove a to do",
+            "remove an event from my to do list"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "STEM"
+              }
+            },
+            {
+              "name": {
+                "value": "Health"
+              }
+            },
+            {
+              "name": {
+                "value": "Environment"
+              }
+            },
+            {
+              "name": {
+                "value": "Education"
+              }
+            },
+            {
+              "name": {
+                "value": "Business"
+              }
+            },
+            {
+              "name": {
+                "value": "Arts"
+              }
+            }
+          ],
+          "name": "INTEREST"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "CaptureInterestIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "interest",
+              "type": "INTEREST",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.631908273854.594586200910"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.631908273854.594586200910",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "You can pick Arts, Business, Education, Environment, Health, or STEM. If you don\u0027t have an interest in mind, say No Preference."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "18"
+}
